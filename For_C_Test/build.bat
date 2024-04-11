@@ -13,6 +13,7 @@ gcc -c list.c -o list.o
 
 REM link
 gcc test.o list.o -o test
+REM pause
 
 REM clear
 del *.o
@@ -22,13 +23,19 @@ for %%i in (*.c) do (
         del "%%i"
     )
 )
+pause>nul
+
 cls
 @echo off
-ECHO ***********************************************
-ECHO *  Build Success
-ECHO *  BUILD DAY   : %bdate%-%btime%
-ECHO *  Consume Time: %second%.%millisec%Sec
-ECHO ***********************************************
+echo ***********************************************
+echo *  Build Finish
+echo *  BUILD DAY   : %bdate%-%btime%
+echo *  Consume Time: %second%.%millisec%Sec
+echo ***********************************************
+echo.
+echo here are output:
+echo.
+echo ***********************************************
 
-pause
-
+test.exe
+pause>nul

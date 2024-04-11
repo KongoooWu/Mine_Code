@@ -2,7 +2,7 @@
 #include "list.h"
 void main()
 {
-    printf("hello world\n");
-    test();
+    list_menu();
+    list_create('b');
     return;
 }
